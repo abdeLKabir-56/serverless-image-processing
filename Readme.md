@@ -7,12 +7,17 @@ This README covers the full deployment steps, project structure, and screenshots
 # Project Structure
 
 serverless-image-processing/
-│
+
 ├── api-gateway/ # API Gateway routes & configs
+
 ├── dynamodb-schema/ # DynamoDB table definition
+
 ├── lambda/ # Lambda Functions (code + layers)
+
 ├── test-images/ # Sample images for testing
+
 ├── extras/ # All screenshots (AWS console)
+
 └── Readme.md # This documentation
 
 
