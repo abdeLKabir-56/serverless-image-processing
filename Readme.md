@@ -1,11 +1,10 @@
-# 📘 Serverless Image Processing – AWS Project  
+# Serverless Image Processing – AWS Project  
 A serverless solution that processes images automatically using **Amazon S3**, **AWS Lambda**, **Amazon DynamoDB**, and **Amazon API Gateway**.
 
 This README covers the full deployment steps, project structure, and screenshots documenting the setup.
 
----
 
-# 📁 Project Structure
+# Project Structure
 
 serverless-image-processing/
 │
@@ -16,19 +15,12 @@ serverless-image-processing/
 ├── extras/ # All screenshots (AWS console)
 └── Readme.md # This documentation
 
-yaml
-Copier le code
 
----
+# 1. Architecture Overview
 
-# 📌 1. Architecture Overview
 
-> **(PLACEHOLDER → Insert your architecture diagram here)**  
-*(You can add architecture.png later)*
 
----
-
-# 📌 2. AWS Services Used
+# 2. AWS Services Used
 
 ### **🔹 Amazon S3**
 - Stores input images  
@@ -48,14 +40,14 @@ Copier le code
 
 ---
 
-# 📌 3. Implementation Steps
+# 3. Implementation Steps
 
 ## **3.1 Create S3 Buckets**
 
 1. Create an **Input Bucket**  
 2. Create an **Output Bucket**
 
-📸 Screenshot:  
+Screenshot:  
 ![Bucket Creation](extras/bucket-creation.PNG)
 
 ---
@@ -68,7 +60,7 @@ The role must include:
 - **AmazonS3FullAccess**
 - **AmazonDynamoDBFullAccess**
 
-📸 Screenshots:  
+Screenshots:  
 ![Role Creation](extras/lambda-role-creation-1.PNG)  
 ![Role Success](extras/success-lambda-role-creation.PNG)  
 ![AWS Lambda Basic Execution Role](extras/AWSLambdaBasicExecutionRole.PNG)  
@@ -85,7 +77,7 @@ The role must include:
 3. Upload your Lambda code  
 4. Add Pillow via AWS Lambda Layer  
 
-📸 Screenshots:  
+Screenshots:  
 ![Lambda Creation 1](extras/lambda-creation-1.PNG)  
 ![Select Existing Role](extras/lambda-creation-2-select-existing-role.PNG)  
 ![Lambda Created Successfully](extras/lambda-funct-success-creation.PNG)  
@@ -97,7 +89,7 @@ The role must include:
 
 When a new object is uploaded to the input bucket → trigger the Lambda function.
 
-📸 Screenshots:  
+Screenshots:  
 ![Event Notification 1](extras/event-notif-config-1.PNG)  
 ![Event Notification 2](extras/event-notif-config-2.PNG)  
 ![Event Notification Success](extras/success-creation-event-notif.PNG)
@@ -111,7 +103,7 @@ Example configuration:
 - **Table name:** `ImageMetadata`
 - **Primary key:** `imageId` (String)
 
-📸 Screenshots:  
+Screenshots:  
 ![DynamoDB Table Creation](extras/dynamo-table-creation.PNG)  
 ![Successful Creation](extras/dynamo-success-creation.PNG)
 
@@ -121,7 +113,7 @@ Example configuration:
 
 Upload a sample image to the **input bucket**.
 
-📸 Example test file:  
+Example test file:  
 ![Test Image](extras/test-img-png.PNG)
 
 Lambda will automatically:
@@ -132,7 +124,7 @@ Lambda will automatically:
 - Store metadata in DynamoDB  
 - Log execution details in CloudWatch  
 
-📸 CloudWatch Logs:  
+CloudWatch Logs:  
 ![CloudWatch](extras/cloud-watch-logs.PNG)
 
 ---
@@ -148,56 +140,17 @@ The API can be used to:
 📁 Documentation for API is available in:  
 api-gateway/
 
-yaml
-Copier le code
 
-> **(PLACEHOLDER → Add API documentation or screenshots later)**
-
----
-
-# 📌 5. Test Images
+# 5. Test Images
 
 Place all test images inside:
 
 test-images/
 
-yaml
-Copier le code
 
----
 
-# 📌 6. Extras Folder (All Screenshots)
 
-Screenshots used in this documentation are stored inside:
-
-extras/
-
-diff
-Copier le code
-
-Contents include:
-
-- AmazonDynamoDBFullAccess.PNG  
-- AmazonS3FullAccess.PNG  
-- AWSLambdaBasicExecutionRole.PNG  
-- bucket-creation.PNG  
-- cloud-watch-logs.PNG  
-- dynamo-success-creation.PNG  
-- dynamo-table-creation.PNG  
-- event-notif-config-1.PNG  
-- event-notif-config-2.PNG  
-- lambda-creation-1.PNG  
-- lambda-creation-2-select-existing-role.PNG  
-- lambda-funct-success-creation.PNG  
-- lambda-role-creation-1.PNG  
-- lambda_function.PNG  
-- success-creation-event-notif.PNG  
-- success-lambda-role-creation.PNG  
-- test-img-png.PNG  
-
----
-
-# 📌 7. Future Improvements
+#  7. Future Improvements
 
 - Add authentication (Cognito / IAM)  
 - Add CloudFront for CDN delivery  
@@ -206,7 +159,7 @@ Contents include:
 
 ---
 
-# ✅ Project Completed
+# Project Completed
 
 This end-to-end serverless pipeline is fully automated, scalable, and production ready.
 
