@@ -135,7 +135,8 @@ CloudWatch Logs:
 
 ---
 
-# 📌 4. API Gateway (Optional)
+# 📌 4. API Gateway
+
 
 The API can be used to:
 
