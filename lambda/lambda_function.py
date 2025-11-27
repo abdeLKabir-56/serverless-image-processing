@@ -26,11 +26,11 @@ def lambda_handler(event, context):
 
     # — Convertir l'image dans un buffer mémoire —
     buffer = io.BytesIO()
-    img.save(buffer, "JPEG")
+    img.save(buffer, "PNG")
     buffer.seek(0)
 
     # 4. Upload vers le bucket output
-    output_bucket = "image-output-votre-nom"
+    output_bucket = "image-output-abdel001"
     s3.upload_fileobj(buffer, output_bucket, upload_key)
 
     print(f"Processed image uploaded to {output_bucket}/{upload_key}")
