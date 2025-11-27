@@ -18,6 +18,7 @@ serverless-image-processing/
 
 # 1. Architecture Overview
 
+![Architecture Diagram](extras/diagram.jpg)
 
 
 # 2. AWS Services Used
